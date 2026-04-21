@@ -100,6 +100,7 @@ public class PrerenderFilter implements Filter {
         if (config.getToken() != null && !config.getToken().isBlank()) {
             builder.header("X-Prerender-Token", config.getToken());
         }
+        builder.header("X-Prerender-Int-Type", "Java");
         return builder.build();
     }
 }
