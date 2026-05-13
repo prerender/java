@@ -46,7 +46,7 @@ class PrerenderFilterTest {
     void setUp() throws Exception {
         wireMock.resetAll();
         responseWriter = new StringWriter();
-        when(response.getWriter()).thenReturn(new PrintWriter(responseWriter));
+        lenient().when(response.getWriter()).thenReturn(new PrintWriter(responseWriter));
         PrerenderConfig config = new PrerenderConfig(null, "http://localhost:" + wireMock.getPort());
         filter = new PrerenderFilter(HttpClient.newHttpClient(), config);
     }
