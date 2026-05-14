@@ -22,5 +22,13 @@ jobs:
           java-version: ${{ matrix.java-version }}
           cache: maven
 
+      - name: Setup Node (for contract mock server)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+
+      - name: Fetch contract mock server
+        run: curl -fsSL -o mock-server.mjs https://raw.githubusercontent.com/prerender/integration-contract/main/mock-server.mjs
+
       - name: Run tests
         run: mvn --batch-mode --no-transfer-progress test
