@@ -14,10 +14,13 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PrerenderFilter implements Filter {
+
+    public static final String VERSION = "1.0.0";
 
     private static final Logger logger = Logger.getLogger(PrerenderFilter.class.getName());
 
@@ -101,6 +104,8 @@ public class PrerenderFilter implements Filter {
             builder.header("X-Prerender-Token", config.getToken());
         }
         builder.header("X-Prerender-Int-Type", "Java");
+        builder.header("X-Prerender-Int-Version", VERSION);
+        builder.header("X-Prerender-Request-Id", UUID.randomUUID().toString());
         return builder.build();
     }
 }
