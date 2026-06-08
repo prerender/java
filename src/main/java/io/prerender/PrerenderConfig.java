@@ -9,7 +9,8 @@ class PrerenderConfig {
         "facebookexternalhit", "twitterbot", "rogerbot", "linkedinbot",
         "embedly", "quora link preview", "showyoubot", "outbrain",
         "pinterest", "slackbot", "w3c_validator", "perplexity",
-        "oai-searchbot", "chatgpt-user", "gptbot", "claudebot", "amazonbot"
+        "oai-searchbot", "chatgpt-user", "gptbot", "claudebot", "amazonbot",
+        "iframely"
     );
 
     static final List<String> EXTENSIONS_TO_IGNORE = List.of(
