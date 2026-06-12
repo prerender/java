@@ -97,6 +97,17 @@ class PrerenderFilterTest {
     }
 
     @Test
+    void botRequest_fontAsset_passesThrough() throws Exception {
+        when(request.getMethod()).thenReturn("GET");
+        when(request.getRequestURI()).thenReturn("/fonts/inter.woff2");
+
+        filter.doFilter(request, response, chain);
+
+        verify(chain).doFilter(request, response);
+        verify(response, never()).setStatus(anyInt());
+    }
+
+    @Test
     void escapedFragment_triggersPrerender() throws Exception {
         wireMock.stubFor(get(anyUrl())
             .willReturn(aResponse().withStatus(200).withBody(PRERENDERED_HTML)));
