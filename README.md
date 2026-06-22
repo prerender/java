@@ -1,5 +1,7 @@
 # prerender-java
 
+[![Maven Central](https://img.shields.io/maven-central/v/io.prerender/prerender-java)](https://central.sonatype.com/artifact/io.prerender/prerender-java)
+
 Jakarta Servlet Filter for [Prerender.io](https://prerender.io). Intercepts requests from bots and crawlers and serves prerendered HTML, so your JavaScript-rendered app is fully indexable by search engines and social media scrapers.
 
 Compatible with any **Jakarta EE** application server — Tomcat 10+, Jetty 11+, Spring Boot 3+, Quarkus, Micronaut.
